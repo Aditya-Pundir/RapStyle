@@ -1,0 +1,36 @@
+#RapStyle {
+  color: cyan;
+  margin-top: 1vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+#startStop {
+  width: 80%;
+  height: 5vh;
+  font-size: large;
+  cursor: pointer;
+  background-color: black;
+  color: cyan;
+  outline: none;
+  border: none;
+  border-radius: 10rem;
+}
+#rhymes {
+  margin-top: 5vh;
+  font-size: x-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#text {
+  margin-top: 5vh;
+  font-size: larger;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
