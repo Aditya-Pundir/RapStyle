@@ -65,7 +65,11 @@ const Rap = () => {
 
   return (
     <>
-      <h1 id="RapStyle">RapStyle</h1>
+      <div className="branding">
+        <img id="logo" src="/logo.png" />
+        <h1 id="RapStyle">RapStyle</h1>
+      </div>
+
       <div className="container">
         <button
           id="startStop"
