@@ -21,7 +21,7 @@ const Rap = () => {
 
   useEffect(() => {
     handleListen();
-  }, [isListening]);
+  }, [isListening, handleListen]);
 
   useEffect(() => {
     let lastWord = getLastWord(text);
@@ -66,7 +66,7 @@ const Rap = () => {
   return (
     <>
       <div className="branding">
-        <img id="logo" src="/logo.png" />
+        <img id="logo" src="/logo.png" alt="logo" />
         <h1 id="RapStyle">RapStyle</h1>
       </div>
 
