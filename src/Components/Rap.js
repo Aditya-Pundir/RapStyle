@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../Style/Rap.css";
 
 const SpeechRecognition =
@@ -18,22 +18,7 @@ const Rap = () => {
   const [isListening, setIsListening] = useState(false);
   const [text, setText] = useState("");
   const [rhymes, setRhymes] = useState([]);
-
-  useEffect(() => {
-    handleListen();
-  }, [isListening, handleListen]);
-
-  useEffect(() => {
-    let lastWord = getLastWord(text);
-    fetch(`https://api.datamuse.com/words?rel_rhy=${lastWord}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setRhymes(data);
-      });
-  }, [text]);
-
-  const handleListen = () => {
+  const handleListen = useCallback(() => {
     if (isListening) {
       mic.start();
       mic.onend = () => {
@@ -61,7 +46,21 @@ const Rap = () => {
         console.log(event.error);
       };
     };
-  };
+  }, [isListening]);
+
+  useEffect(() => {
+    handleListen();
+  }, [isListening, handleListen]);
+
+  useEffect(() => {
+    let lastWord = getLastWord(text);
+    fetch(`https://api.datamuse.com/words?rel_rhy=${lastWord}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setRhymes(data);
+      });
+  }, [text]);
 
   return (
     <>
