@@ -10,4 +10,6 @@ body {
     #000000 -14.92%,
     rgba(0, 224, 255, 0.64) 136.08%
   );
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
