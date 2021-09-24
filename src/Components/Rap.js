@@ -27,9 +27,6 @@ const Rap = () => {
     } else {
       mic.stop();
     }
-    mic.onstart = () => {
-      console.log("Mics on");
-    };
 
     mic.onresult = (event) => {
       const transcript = Array.from(event.results)
