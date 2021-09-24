@@ -22,17 +22,25 @@ const Rap = () => {
     if (isListening) {
       mic.start();
       mic.onend = () => {
+        // console.log("continue..");
         mic.start();
       };
     } else {
       mic.stop();
+      mic.onend = () => {
+        // console.log("Stopped Mic on Click");
+      };
     }
+    mic.onstart = () => {
+      //   console.log("Mics on");
+    };
 
     mic.onresult = (event) => {
       const transcript = Array.from(event.results)
         .map((result) => result[0])
         .map((result) => result.transcript)
         .join("");
+      //   console.log(transcript);
       setText(transcript);
       mic.onerror = (event) => {
         console.log(event.error);
@@ -49,6 +57,7 @@ const Rap = () => {
     fetch(`https://api.datamuse.com/words?rel_rhy=${lastWord}`)
       .then((response) => response.json())
       .then((data) => {
+        // console.log(data);
         setRhymes(data);
       });
   }, [text]);
