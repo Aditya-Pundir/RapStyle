@@ -1,4 +1,3 @@
-import ReactGA from "react-ga";
 import Rap from "./Components/Rap";
 
 function App() {

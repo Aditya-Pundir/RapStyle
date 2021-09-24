@@ -12,6 +12,22 @@
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Script for Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-726VB2HM34"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-726VB2HM34");
+    </script>
+
     <title>RapStyle</title>
   </head>
   <body>
